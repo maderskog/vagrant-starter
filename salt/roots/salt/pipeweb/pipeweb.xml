@@ -1,1 +1,1 @@
-<Context path="/pipeweb" docBase="/usr/share/tomcat6/webapps/pipeweb" />
+<Context path="/pipeweb" docBase="/usr/share/tomcat7/webapps/pipeweb" />

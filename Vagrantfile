@@ -5,7 +5,7 @@ Vagrant::Config.run do |config|
   config.vm.box = "ubuntu/trusty64"
 
   config.vm.forward_port 8080, 8080
-  config.vm.share_folder "pipeweb", "/usr/share/tomcat6/webapps", "pipeweb/target"
+  config.vm.share_folder "pipeweb", "/usr/share/tomcat7/webapps", "pipeweb/target"
 
   ## For masterless, mount your salt file root
   config.vm.share_folder "salt_file_root", "/srv", "salt/roots/"

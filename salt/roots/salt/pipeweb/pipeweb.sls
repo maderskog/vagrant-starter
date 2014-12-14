@@ -1,5 +1,5 @@
 pipeweb:       
-      
+
   file.managed:
     - name: /etc/tomcat7/Catalina/localhost/pipeweb.xml
     - source: salt://pipeweb/pipeweb.xml

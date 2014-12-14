@@ -1,19 +1,19 @@
 debconf-utils:
   pkg:
     - installed
-    
-tomcat7:       
-  pkg:         
-    - installed    
+
+tomcat7:
+  pkg:
+    - installed
     - require:
       - pkg: debconf-utils
-      
+
   service.running:
-    - enable: True      
+    - enable: True
     - name: tomcat7
     - watch:
       - file: /etc/tomcat7/server.xml
-      
+
   file.managed:
     - name: /etc/tomcat7/server.xml
     - source: salt://tomcat7/server.xml
