@@ -1,14 +1,14 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-Vagrant::Config.run do |config|
+Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/trusty64"
 
-  config.vm.forward_port 8080, 8080
-  config.vm.share_folder "pipeweb", "/usr/share/tomcat7/webapps", "pipeweb/target"
+  config.vm.network "forwarded_port", guest: 8080, host: 8080
+  config.vm.synced_folder "pipeweb/target", "/usr/share/tomcat7/webapps"
 
   ## For masterless, mount your salt file root
-  config.vm.share_folder "salt_file_root", "/srv", "salt/roots/"
+  config.vm.synced_folder "salt/roots/", "/srv"
 
   ## Use all the defaults:
   config.vm.provision :salt do |salt|
