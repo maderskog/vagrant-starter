@@ -1,7 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'war'
 
-task deployToTomcat(type: Copy) {
+task deploy(type: Copy) {
   from('build/libs')
   into('target')
   include('*.war')
